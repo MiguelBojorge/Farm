@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body{
+margin:0;
+font-family:'Press Start 2P', cursive;
+}
+
+.sky{
+height:40vh;
+background:#87CEEB;
+}
+
+.grass{
+height:60vh;
+background:#4ade80;
+}
+
+.farm-title{
+position:absolute;
+top:50px;
+left:50%;
+transform:translateX(-50%);
+font-size:32px;
+color:black;
+}
