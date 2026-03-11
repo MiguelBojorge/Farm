@@ -1,3 +1,14 @@
+/* src/index.css */
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+
+/* Opcional: Esto hará que todo tu programa use la fuente pixel por defecto */
+body {
+  margin: 0;
+  font-family: 'VT323', monospace;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

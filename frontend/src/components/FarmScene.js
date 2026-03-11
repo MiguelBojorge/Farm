@@ -1,39 +1,30 @@
-import house from "../assets/house.png"
-import cow from "../assets/cow.png"
-import pig from "../assets/pig.png"
+import React from 'react';
+import './FarmScene.css';
+// Importamos la imagen desde la carpeta assets
+import backgroundNight from '../assets/noche_granja.jpg';
 
-export default function FarmScene(){
+const FarmScene = ({ farmName = "UNIVERSIDAD" }) => {
+  return (
+    <div className="farm-main-area">
+      {/* Imagen de fondo */}
+      <img 
+        src={backgroundNight} 
+        alt="Stardew Valley Night" 
+        className="farm-background-img" 
+      />
 
-return(
+      {/* Título superpuesto al estilo Stardew Valley */}
+      <div className="sv-logo-container">
+        <span className="sv-logo-prefix">GRANJA</span>
+        <h1 className="sv-logo-text">{farmName}</h1>
+      </div>
 
-<div>
+      {/* Aquí es donde caerá el contenido de tus páginas (Ventas, Inventario, etc.) */}
+      <div className="farm-content-overlay">
+        {/* Este espacio queda libre para tus formularios futuros */}
+      </div>
+    </div>
+  );
+};
 
-<div className="sky"></div>
-
-<div className="grass flex justify-center items-center relative">
-
-<img
-src={house}
-alt="farm"
-className="w-64"
-/>
-
-<img
-src={cow}
-alt="cow"
-className="absolute left-40 bottom-10 w-24"
-/>
-
-<img
-src={pig}
-alt="pig"
-className="absolute right-40 bottom-10 w-24"
-/>
-
-</div>
-
-</div>
-
-)
-
-}
+export default FarmScene;

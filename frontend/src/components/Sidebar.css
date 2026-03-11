@@ -1,0 +1,70 @@
+.stardew-sidebar {
+  width: 260px;
+  height: 100vh;
+  background-color: #854c30; /* Marrón madera */
+  border-right: 6px double #f3e4b7; /* Borde estilo interfaz Stardew */
+  display: flex;
+  flex-direction: column;
+  padding: 20px 10px;
+  box-sizing: border-box;
+  color: #fff;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Cambia por VT323 para más realismo */
+}
+
+.sidebar-header {
+  text-align: center;
+  border-bottom: 4px solid #633520;
+  padding-bottom: 15px;
+  margin-bottom: 20px;
+}
+
+.sidebar-header h2 {
+  font-size: 1.5rem;
+  text-shadow: 2px 2px #000;
+  letter-spacing: 1px;
+}
+
+.sidebar-nav ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar-item {
+  margin-bottom: 10px;
+}
+
+.sidebar-link {
+  width: 100%;
+  background: #b16a41;
+  border: 3px solid #f3e4b7;
+  color: white;
+  padding: 12px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-shadow: 1px 1px #000;
+  border-radius: 4px;
+}
+
+.sidebar-link:hover {
+  background-color: #df7126; /* Color naranja de selección */
+  transform: scale(1.02);
+}
+
+.sidebar-link .icon {
+  margin-right: 15px;
+  font-size: 1.2rem;
+}
+
+.sidebar-link .label {
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+.sidebar-footer {
+  margin-top: auto;
+  font-size: 0.7rem;
+  text-align: center;
+  opacity: 0.7;
+}

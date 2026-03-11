@@ -1,26 +1,19 @@
-import { BrowserRouter,Routes,Route } from "react-router-dom"
+// src/App.js
+import React from 'react';
+import Sidebar from './components/Sidebar';
+import FarmScene from './components/FarmScene';
+import './App.css';
 
-import Sidebar from "./components/Sidebar"
-import Home from "./pages/Home"
+function App() {
+  return (
+    <div style={{ display: 'flex', width: '100vw', height: '100vh' }}>
+      {/* El Sidebar se queda fijo a la izquierda */}
+      <Sidebar />
 
-function App(){
-
-return(
-
-<BrowserRouter>
-
-<Sidebar/>
-
-<Routes>
-
-<Route path="/" element={<Home/>}/>
-
-</Routes>
-
-</BrowserRouter>
-
-)
-
+      {/* El FarmScene ocupa el resto de la pantalla a la derecha */}
+      <FarmScene farmName="UNIVERSIDAD" />
+    </div>
+  );
 }
 
-export default App
+export default App;
