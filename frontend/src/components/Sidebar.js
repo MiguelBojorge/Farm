@@ -1,29 +1,38 @@
 import React from 'react';
-import './Sidebar.css'; // Asegúrate de crear este archivo
+import { NavLink } from 'react-router-dom';
+import './Sidebar.css';
 
 const Sidebar = () => {
   const menuItems = [
-    { id: 'ventas', label: 'Gestión de Ventas', icon: '💰' },
-    { id: 'precios', label: 'Precios de Mercado', icon: '📈' },
-    { id: 'inventario', label: 'Inventario Animal', icon: '🐄' },
-    { id: 'gastos', label: 'Gastos Producción', icon: '🚜' },
-    { id: 'reportes', label: 'Reportes Financieros', icon: '📊' },
-    { id: 'usuarios', label: 'Usuarios y Roles', icon: '👤' },
+    { id: 'dashboard', label: 'Dashboard', icon: '🏠', path: '/dashboard' },
+    { id: 'cerdos', label: 'Gestión de Cerdos', icon: '🐷', path: '/cerdos' },
+    { id: 'cultivos', label: 'Control Cultivos', icon: '🌽', path: '/cultivos' },
+    { id: 'inventario', label: 'Insumos / Stock', icon: '📦', path: '/inventario' },
+    { id: 'ventas', label: 'Ventas / Clientes', icon: '💰', path: '/ventas' },
+    { id: 'finanzas', label: 'Reportes Finanzas', icon: '📊', path: '/finanzas' },
   ];
 
   return (
     <div className="stardew-sidebar">
       <div className="sidebar-header">
-        <h2>Panel de Granja</h2>
+        <NavLink to="/" className="flex items-center justify-center hover:scale-105 transition-transform no-underline">
+          <span className="text-2xl mr-2">🏠</span>
+          <h2 className="text-xl font-bold">Panel de Granja</h2>
+        </NavLink>
       </div>
       <nav className="sidebar-nav">
         <ul>
           {menuItems.map((item) => (
             <li key={item.id} className="sidebar-item">
-              <button className="sidebar-link">
+              <NavLink 
+                to={item.path} 
+                className={({ isActive }) => 
+                  isActive ? "sidebar-link active" : "sidebar-link"
+                }
+              >
                 <span className="icon">{item.icon}</span>
                 <span className="label">{item.label}</span>
-              </button>
+              </NavLink>
             </li>
           ))}
         </ul>

@@ -1,98 +1,108 @@
-/* src/components/FarmScene.css */
+/* Estilos generales de la Granja (Restaurados) */
 
-/* 1. CONTENEDOR PRINCIPAL DEL ÁREA DERECHA */
-.farm-main-area {
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+
+/* 1. LANDING PAGE (Visor completo de granja) */
+.landing-full {
   position: relative;
-  flex-grow: 1; /* Esto hace que ocupe todo el espacio sobrante al lado del sidebar */
+  width: 100%;
   height: 100vh;
   overflow: hidden;
-  background-color: #050a1c; /* Color de respaldo azul noche muy oscuro */
+  background-color: #050a1c;
 }
 
-/* 2. IMAGEN DE FONDO (LA DE NOCHE) */
 .farm-background-img {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Ajusta la imagen sin deformarla */
-  object-position: center bottom; /* Prioriza ver la casa y el suelo */
+  object-fit: cover;
+  object-position: center bottom;
   position: absolute;
   top: 0;
   left: 0;
   z-index: 1;
 }
 
-/* 3. CONTENEDOR DEL LOGO/TÍTULO */
 .sv-logo-container {
   position: absolute;
-  top: 10%; /* Lo ubica en la zona del cielo estrellado */
+  top: 15%;
   left: 50%;
   transform: translateX(-50%);
   text-align: center;
   z-index: 10;
-  pointer-events: none; /* Permite hacer clic a través del título */
   width: 100%;
+  animation: float 4s ease-in-out infinite;
 }
 
-/* Pequeño texto "GRANJA" arriba del nombre principal */
 .sv-logo-prefix {
   display: block;
   font-family: 'VT323', monospace;
   font-size: 2.5rem;
   color: #ffffff;
-  text-shadow: 4px 4px 0px #000; /* Sombra sólida estilo retro */
-  margin-bottom: -15px; /* Lo pega más al título principal */
+  text-shadow: 4px 4px 0px #000;
+  margin-bottom: -15px;
   letter-spacing: 5px;
 }
 
-/* TÍTULO PRINCIPAL (UNIVERSIDAD) */
 .sv-logo-text {
   margin: 0;
   font-family: 'VT323', monospace;
-  font-size: 9rem; /* Tamaño impactante */
+  font-size: 8rem;
   text-transform: uppercase;
-  letter-spacing: -5px;
-  
-  /* DEGRADADO AMARILLO/DORADO */
   background: linear-gradient(180deg, #ffec3d 0%, #ffc107 50%, #e6a100 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  color: transparent;
-
-  /* BORDE GRUESO MARRÓN Y SOMBRA NEGRA */
-  /* El stroke simula el borde de madera */
-  -webkit-text-stroke: 4px #5d3d19; 
-  /* La sombra le da profundidad */
+  -webkit-text-stroke: 4px #5d3d19;
   filter: drop-shadow(8px 8px 0px #000);
 }
 
-/* 4. CAPA DE CONTENIDO (Donde irán tus formularios después) */
-.farm-content-overlay {
-  position: absolute;
-  top: 50%; /* Debajo del título */
-  left: 50%;
-  transform: translate(-50%, 0);
-  z-index: 20;
-  width: 90%;
-  max-width: 900px;
+@keyframes float {
+  0%, 100% { transform: translateX(-50%) translateY(0px); }
+  50% { transform: translateX(-50%) translateY(-15px); }
+}
+
+/* 2. TABLERO DE GESTIÓN (Dashboard, Cerdos, etc.) */
+.farm-management-bg {
+  width: 100%;
+  height: 100vh;
+  background-color: #f7e6c4;
+  background-image: 
+    radial-gradient(#dcc090 1.5px, transparent 1.5px),
+    radial-gradient(#dcc090 1.5px, transparent 1.5px);
+  background-size: 40px 40px;
+  background-position: 0 0, 20px 20px;
   display: flex;
   justify-content: center;
+  align-items: center;
+  overflow: hidden;
 }
 
-/* Estilo para los textos secundarios dentro de la escena */
-.farm-main-area p {
-  font-family: 'VT323', monospace;
-  color: white;
-  text-shadow: 2px 2px #000;
+.farm-board-container {
+  width: 96%;
+  height: 94%;
+  background: #ffffff;
+  border: 12px solid #5d3a1a;
+  border-radius: 24px;
+  box-shadow: 
+    inset 0 0 40px rgba(0,0,0,0.1),
+    0 25px 60px rgba(0,0,0,0.4);
+  position: relative;
+  overflow: hidden;
 }
 
-/* ANIMACIÓN OPCIONAL: Un suave balanceo para el logo */
-@keyframes float {
-  0% { transform: translateX(-50%) translateY(0px); }
-  50% { transform: translateX(-50%) translateY(-10px); }
-  100% { transform: translateX(-50%) translateY(0px); }
+.farm-content-scroll {
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+  padding: 3rem;
+  box-sizing: border-box;
 }
 
-.sv-logo-container {
-  animation: float 4s ease-in-out infinite;
+/* Scrollbar para el tablero */
+.farm-content-scroll::-webkit-scrollbar {
+  width: 10px;
+}
+.farm-content-scroll::-webkit-scrollbar-thumb {
+  background: #5d3a1a;
+  border-radius: 5px;
 }

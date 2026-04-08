@@ -1,70 +1,83 @@
 .stardew-sidebar {
   width: 260px;
-  height: 100vh;
-  background-color: #854c30; /* Marrón madera */
-  border-right: 6px double #f3e4b7; /* Borde estilo interfaz Stardew */
+  background-color: #5d3a1a;
+  border-right: 4px solid #3d2310;
+  color: #f7e6c4;
   display: flex;
   flex-direction: column;
-  padding: 20px 10px;
-  box-sizing: border-box;
-  color: #fff;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Cambia por VT323 para más realismo */
+  box-shadow: 4px 0 15px rgba(0,0,0,0.5);
+  z-index: 100;
 }
 
 .sidebar-header {
+  padding: 2rem 1rem;
+  border-bottom: 2px solid #3d2310;
   text-align: center;
-  border-bottom: 4px solid #633520;
-  padding-bottom: 15px;
-  margin-bottom: 20px;
 }
 
 .sidebar-header h2 {
-  font-size: 1.5rem;
-  text-shadow: 2px 2px #000;
-  letter-spacing: 1px;
+  font-family: 'Outfit', sans-serif;
+  color: #f4b41b;
+  text-shadow: 2px 2px 0px #000;
+  margin: 0;
+}
+
+.sidebar-nav {
+  flex: 1;
+  padding: 1.5rem 0.5rem;
 }
 
 .sidebar-nav ul {
   list-style: none;
   padding: 0;
+  margin: 0;
 }
 
 .sidebar-item {
-  margin-bottom: 10px;
+  margin-bottom: 0.5rem;
 }
 
 .sidebar-link {
-  width: 100%;
-  background: #b16a41;
-  border: 3px solid #f3e4b7;
-  color: white;
-  padding: 12px;
   display: flex;
   align-items: center;
-  cursor: pointer;
+  padding: 0.8rem 1rem;
+  color: #f7e6c4;
+  text-decoration: none;
+  border-radius: 8px;
   transition: all 0.2s ease;
-  text-shadow: 1px 1px #000;
-  border-radius: 4px;
-}
-
-.sidebar-link:hover {
-  background-color: #df7126; /* Color naranja de selección */
-  transform: scale(1.02);
+  border: 1px solid transparent;
 }
 
 .sidebar-link .icon {
-  margin-right: 15px;
-  font-size: 1.2rem;
+  font-size: 1.5rem;
+  margin-right: 1rem;
 }
 
 .sidebar-link .label {
-  font-weight: bold;
-  font-size: 0.9rem;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.sidebar-link:hover {
+  background-color: #7a4f22;
+  transform: translateX(5px);
+}
+
+.sidebar-link.active {
+  background-color: #f4b41b;
+  color: #3d2310;
+  border: 1px solid #ffffff;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+.sidebar-link.active .icon {
+  transform: scale(1.2);
 }
 
 .sidebar-footer {
-  margin-top: auto;
-  font-size: 0.7rem;
+  padding: 1rem;
+  font-size: 0.75rem;
+  opacity: 0.6;
   text-align: center;
-  opacity: 0.7;
+  border-top: 1px solid #3d2310;
 }

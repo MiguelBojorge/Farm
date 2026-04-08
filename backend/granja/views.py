@@ -1,8 +1,15 @@
-from django.shortcuts import render
 from rest_framework import viewsets
-from .models import Animal
-from .serializers import AnimalSerializer
+from .models import LoteCerdos, Cultivo, RegistroSalud
+from .serializers import LoteCerdosSerializer, CultivoSerializer, RegistroSaludSerializer
 
-class AnimalViewSet(viewsets.ModelViewSet):
-    queryset = Animal.objects.all()
-    serializer_class = AnimalSerializer
+class LoteCerdosViewSet(viewsets.ModelViewSet):
+    queryset = LoteCerdos.objects.all()
+    serializer_class = LoteCerdosSerializer
+
+class CultivoViewSet(viewsets.ModelViewSet):
+    queryset = Cultivo.objects.all()
+    serializer_class = CultivoSerializer
+
+class RegistroSaludViewSet(viewsets.ModelViewSet):
+    queryset = RegistroSalud.objects.all()
+    serializer_class = RegistroSaludSerializer

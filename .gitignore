@@ -27,3 +27,11 @@ db.sqlite3
 *.pid
 *.seed
 *.cover
+
+# Environments
+venv/
+backend/venv/
+.env
+.venv
+env/
+ENV/
