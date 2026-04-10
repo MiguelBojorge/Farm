@@ -2,6 +2,9 @@ from django.db import models
 
 class LoteCerdos(models.Model):
     ESTADO_CHOICES = [
+        ('SALUDABLE', 'Saludable'),
+        ('OBSERVACION', 'Observación'),
+        ('REVISION', 'Revisión'),
         ('ENGORDE', 'Engorde'),
         ('CRIA', 'Cría'),
         ('DESTETE', 'Destete'),
@@ -14,7 +17,8 @@ class LoteCerdos(models.Model):
     peso_actual = models.FloatField(default=0, help_text="Peso promedio actual en kg")
     costo_inicial = models.DecimalField(max_digits=12, decimal_places=2, default=0, help_text="C$ invertidos inicialmente")
     raza = models.CharField(max_length=100)
-    estado = models.CharField(max_length=10, choices=ESTADO_CHOICES, default='ENGORDE')
+    estado = models.CharField(max_length=20, choices=ESTADO_CHOICES, default='SALUDABLE')
+    edad_inicial_semanas = models.IntegerField(default=0, help_text="Semanas de vida al entrar al lote")
     observaciones = models.TextField(blank=True, null=True)
 
     def __str__(self):

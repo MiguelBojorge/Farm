@@ -1,83 +1,72 @@
-.stardew-sidebar {
-  width: 260px;
+.sidebar-dark-wood {
+  width: 280px;
+  height: 100vh;
+  position: fixed;
+  left: 0;
+  top: 0;
   background-color: #5d3a1a;
-  border-right: 4px solid #3d2310;
-  color: #f7e6c4;
+  color: white;
   display: flex;
   flex-direction: column;
-  box-shadow: 4px 0 15px rgba(0,0,0,0.5);
-  z-index: 100;
+  box-shadow: 4px 0 15px rgba(0,0,0,0.3);
+  z-index: 1000;
+  border-right: 4px solid #3d2310;
 }
 
 .sidebar-header {
-  padding: 2rem 1rem;
-  border-bottom: 2px solid #3d2310;
+  padding: 3rem 1.5rem;
   text-align: center;
+  border-bottom: 2px solid #3d2310;
 }
 
 .sidebar-header h2 {
-  font-family: 'Outfit', sans-serif;
+  font-family: 'VT323', monospace;
   color: #f4b41b;
+  font-size: 1.75rem;
+  letter-spacing: 1px;
   text-shadow: 2px 2px 0px #000;
-  margin: 0;
+  margin-top: 0.5rem;
 }
 
 .sidebar-nav {
   flex: 1;
-  padding: 1.5rem 0.5rem;
+  padding: 2rem 1rem;
 }
 
 .sidebar-nav ul {
   list-style: none;
-  padding: 0;
-  margin: 0;
 }
 
 .sidebar-item {
-  margin-bottom: 0.5rem;
+  margin-bottom: 1.25rem;
 }
 
 .sidebar-link {
   display: flex;
   align-items: center;
-  padding: 0.8rem 1rem;
-  color: #f7e6c4;
+  gap: 1.25rem;
+  color: #f1e4d1;
   text-decoration: none;
-  border-radius: 8px;
-  transition: all 0.2s ease;
-  border: 1px solid transparent;
-}
-
-.sidebar-link .icon {
-  font-size: 1.5rem;
-  margin-right: 1rem;
-}
-
-.sidebar-link .label {
   font-weight: 600;
-  font-size: 0.95rem;
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  transition: all 0.2s;
 }
 
 .sidebar-link:hover {
-  background-color: #7a4f22;
+  color: #f4b41b;
   transform: translateX(5px);
 }
 
 .sidebar-link.active {
-  background-color: #f4b41b;
-  color: #3d2310;
-  border: 1px solid #ffffff;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-}
-
-.sidebar-link.active .icon {
-  transform: scale(1.2);
+  color: #f4b41b;
+  border-left: 4px solid #f4b41b;
 }
 
 .sidebar-footer {
-  padding: 1rem;
+  padding: 1.5rem;
   font-size: 0.75rem;
-  opacity: 0.6;
+  color: rgba(255,255,255,0.4);
   text-align: center;
   border-top: 1px solid #3d2310;
 }

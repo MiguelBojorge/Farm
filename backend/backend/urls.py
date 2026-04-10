@@ -9,7 +9,7 @@ from ventas.views import VentaViewSet, ClienteViewSet
 
 def api_root(request):
     return JsonResponse({
-        "message": "Bienvenido al API de la Granja Universidad",
+        "message": "Bienvenido al API de Finca la Primavera",
         "endpoints": {
             "admin": "/admin/",
             "api": "/api/",
