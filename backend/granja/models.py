@@ -19,6 +19,7 @@ class LoteCerdos(models.Model):
     raza = models.CharField(max_length=100)
     estado = models.CharField(max_length=20, choices=ESTADO_CHOICES, default='SALUDABLE')
     edad_inicial_semanas = models.IntegerField(default=0, help_text="Semanas de vida al entrar al lote")
+    ubicacion = models.CharField(max_length=100, default='Corral A-1', verbose_name="Ubicación/Corral")
     observaciones = models.TextField(blank=True, null=True)
 
     def __str__(self):
